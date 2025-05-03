@@ -3,6 +3,8 @@
 @section('title', 'Profile')
 
 @section('content')
-    <h1>Halo</h1>
-    <h2>Ini sementara</h2>
+    <a href="{{ route('logout') }}"
+    class="bg-ungu-gelap hover:bg-ungu-terang text-white font-semibold px-4 py-2 rounded transition">
+    Logout
+    </a>
 @endsection
