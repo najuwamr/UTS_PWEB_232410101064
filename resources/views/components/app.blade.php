@@ -29,7 +29,7 @@
 <body class="min-h-screen flex flex-col">
     @include('components.navbar')
 
-    <main class="flex-grow p-4">
+    <main class="flex-grow p-8">
         @yield('content')
     </main>
 

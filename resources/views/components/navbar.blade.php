@@ -1,4 +1,4 @@
-<nav class="bg-ungu-normal text-ungu-pucat px-4 py-3 flex flex-wrap items-center justify-between">
+<nav class="bg-ungu-normal sticky top-0 text-ungu-pucat px-4 py-3 flex flex-wrap items-center justify-between">
     <div class="text-2xl font-comic font-bold tracking-wide whitespace-nowrap">
         AniNotee
     </div>
@@ -15,8 +15,8 @@
 
         @if(isset($username))
             <a href="{{ route('profile', ['username' => $username]) }}"
-               class="ml-2 font-bold text-white hover:text-ungu-pucat transition whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
-                Hi, {{ $username }}
+               class="ml-2 font-bold border-b-4 border-violet-200 text-white hover:text-ungu-pucat transition whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
+                Hi, {{ $username }}!
             </a>
         @endif
     </div>
