@@ -19,10 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [PageController::class, 'login'])->name('login.submit');
 Route::get('/logout', [PageController::class, 'logout'])->name('logout');
-
 Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 Route::get('/anime-list', [PageController::class, 'animeList'])->name('anime-list');
 Route::post('/anime-list/add', [PageController::class, 'addAnime'])->name('anime.add');
-// Route::post('/anime-list/add', [PageController::class, 'addList'])->name('anime.add');
 Route::delete('/anime-list/delete/{title}', [PageController::class, 'delList'])->name('anime.delete');

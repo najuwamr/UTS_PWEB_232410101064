@@ -1,4 +1,4 @@
-<footer class="bg-ungu-terang text-ungu-gelap p-4 h-32 relative">
+<footer class="cursor-default bg-ungu-terang text-ungu-gelap p-4 h-32 relative">
     <div class="flex justify-between">
         <div class="flex font-comic font-bold gap-4">
             <img

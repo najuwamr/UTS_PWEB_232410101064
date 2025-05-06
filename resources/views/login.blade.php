@@ -35,14 +35,14 @@
                 @enderror
 
                 <div class="flex justify-end items-center mt-1">
-                    <button type="button" id="togglePassword" class="text-sm text-ungu-normal font-medium hover:underline focus:outline-none">
+                    <button type="button" id="togglePassword" class="text-sm cursor-pointer text-ungu-normal font-medium hover:underline focus:outline-none">
                         Show Password
                     </button>
                 </div>
             </div>
 
             <button type="submit"
-                class="w-full bg-ungu-normal hover:bg-ungu-gelap text-white font-semibold py-2 rounded transition">
+                class="cursor-pointer w-full bg-ungu-normal hover:bg-ungu-gelap text-white font-semibold py-2 rounded transition">
                 Login
             </button>
         </form>
@@ -62,7 +62,7 @@
             });
         </script>
 
-        <p class="text-center text-ungu-normal font-medium">
+        <p class="text-center mt-4 text-ungu-normal font-medium">
             ©2025 Najuwamr
         </p>
     </div>

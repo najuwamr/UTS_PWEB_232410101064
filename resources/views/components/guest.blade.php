@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .bg-ungu-cokelat { background-color: #261D19; }
             .bg-ungu-gelap { background-color: #553A49; }
             .bg-ungu-normal { background-color: #7C617E; }
             .bg-ungu-terang { background-color: #C3ACCE; }

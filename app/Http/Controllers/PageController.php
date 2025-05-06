@@ -23,7 +23,7 @@ class PageController extends Controller
             'genre' => 'Action, Mystery',
             'score' => '95',
             'status' => 'Finish',
-            'notes' => 'Bunch of plot twists. I personally hate you, Fedya.',
+            'notes' => 'Bunch of plot twists. I personally hate you, Fedya!',
         ],
         [
             'images' => 'https://cdn.myanimelist.net/images/anime/11/81755.jpg',
@@ -41,7 +41,7 @@ class PageController extends Controller
             'genre' => 'Mystery, Drama',
             'score' => '87',
             'status' => 'Watching',
-            'notes' => '',
+            'notes' => 'Maomao is cute!',
         ],
         [
             'images' => 'https://cdn.myanimelist.net/images/anime/1426/139388.jpg',
@@ -53,6 +53,7 @@ class PageController extends Controller
             'notes' => 'Looking forward to this fun series.',
         ],
     ];
+
     // Bagian Autentikasi
     public function showLoginForm()
     {
@@ -77,36 +78,6 @@ class PageController extends Controller
     }
 
     // Bagian Dashboard
-    private static $carouselItems =[
-        [
-            'images' => 'https://cdn.myanimelist.net/images/anime/1015/138006.jpg',
-            'title' => 'Frieren: Beyond Journey\'s End',
-            'studio' => 'Madhouse',
-            'genre' => 'Adventure, Fantasy',
-            'score' => '97',
-            'status' => 'Rewatching',
-            'notes' => 'Peaceful but emotional.',
-        ],
-        [
-            'images' => 'https://cdn.myanimelist.net/images/anime/1263/132759.jpg',
-            'title' => 'Bungo Stray Dogs',
-            'studio' => 'Bones',
-            'genre' => 'Action, Mystery',
-            'score' => '95',
-            'status' => 'Finish',
-            'notes' => 'Bunch of plot twists. I personally hate you, Fedya.',
-        ],
-        [
-            'images' => 'https://cdn.myanimelist.net/images/anime/1708/138033.jpg',
-            'title' => 'The Apothecary Diaries',
-            'studio' => 'TOHO animation',
-            'genre' => 'Mystery, Drama',
-            'score' => '87',
-            'status' => 'Watching',
-            'notes' => '',
-        ],
-    ];
-
     public function dashboard(Request $request)
     {
         $username = $request->query('username');
@@ -115,8 +86,16 @@ class PageController extends Controller
             return redirect()->route('login')->withErrors(['login' => 'Silakan login dulu.']);
         }
 
+        $resumeList =[
+            ['count' => '1 To Watch', 'image' => asset('storage/images/AniNotee-logo.png')],
+            ['count' => '1 Watching', 'image' => asset('storage/images/AniNotee-logo.png')],
+            ['count' => '2 Finish', 'image' => asset('storage/images/AniNotee-logo.png')],
+            ['count' => '1 Rewatching', 'image' => asset('storage/images/AniNotee-logo.png')],
+            ['count' => '0 Dropped', 'image' => asset('storage/images/AniNotee-logo.png')],
+        ];
+
         $animelistItems = self::$animelistItems;
-        return view('dashboard', compact('username', 'animelistItems'));
+        return view('dashboard', compact('username', 'animelistItems', 'resumeList'));
     }
 
     // Bagian Profile
@@ -142,7 +121,7 @@ class PageController extends Controller
 
         $animelistItems = self::$animelistItems;
 
-        return view('anime-list', compact('username', 'animelistItems'));
+        return view('pengelolaan', compact('username', 'animelistItems'));
     }
 
     public function addAnime(Request $request)
@@ -161,6 +140,6 @@ class PageController extends Controller
         $animelistItems = self::$animelistItems;
         $animelistItems[] = $newItem;
 
-        return view('anime-list', compact('username', 'animelistItems'));
+        return view('pengelolaan', compact('username', 'animelistItems'));
     }
 }
